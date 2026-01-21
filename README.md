@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Template - Juyonna Travels
+
+A feature-driven Next.js template with a built-in design system and documentation engine.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up the project locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. **Clone the repository** (into your desired folder structure):
+
+   ```bash
+   git clone git@github.com:TM-Labs-Global/next-template.git .
+   ```
+
+2. **Update project information**:
+   Open `package.json` and update the `"name"` field to your project's name.
+
+3. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## Folder Structure
+
+The project follows a modular, feature-based architecture:
+
+```
+├── app/                  # Next.js App Router (Entry points & Routing)
+│   ├── design-system/    # Design System Showcase page
+│   ├── docs/             # Documentation site page
+│   └── globals.css       # Global styles & Tailwind imports
+├── features/             # Business logic & components grouped by feature
+│   ├── design-system/    # Logic for the design system showcase
+│   ├── docs/             # Logic for the documentation engine
+│   └── home/             # Landing page components
+├── shared/               # Shared utilities, styles, and types
+│   ├── styles/           # CSS design tokens (colors, typography, etc.)
+│   └── utils/            # Shared helper functions (CSS parsers, etc.)
+└── public/               # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Documentation & Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The project includes built-in tools for maintaining a living style guide and documentation:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Documentation Engine**: View and edit project documentation at [/docs](http://localhost:3000/docs)
+- **Design System Showcase**: Explore the interactive design system at [/design-system](http://localhost:3000/design-system)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The design system is dynamically powered by tokens defined in `shared/styles/`. Updates to CSS files are automatically reflected in the showcase.
