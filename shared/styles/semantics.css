@@ -1,0 +1,44 @@
+:root {
+  /* Text */
+  --color-text-primary: var(--color-navy-700); /* usage: Headings, emphasis, primary content */
+  --color-text-secondary: var(--color-gray-700); /* usage: Body text, descriptions */
+  --color-text-tertiary: var(--color-gray-500); /* usage: Captions, helper text, timestamps */
+  --color-text-disabled: var(--color-gray-400); /* usage: Disabled labels, placeholders */
+  --color-text-inverse: var(--color-white); /* usage: Text on dark backgrounds */
+  --color-text-link: var(--color-ocean-500); /* usage: Hyperlinks, clickable text */
+
+  /* Background */
+  --color-bg-page: var(--color-gray-50); /* usage: Main page background */
+  --color-bg-card: var(--color-white); /* usage: Card surfaces, panels */
+  --color-bg-elevated: var(--color-white); /* usage: Modals, dropdowns, popovers */
+  --color-bg-muted: var(--color-gray-100); /* usage: Subtle backgrounds, zebra stripes */
+  --color-bg-inverse: var(--color-navy-700); /* usage: Dark sections, footer */
+  --color-bg-brand: var(--color-yellow-500); /* usage: Brand highlight sections */
+
+  /* Border */
+  --color-border-default: var(--color-gray-200); /* usage: Standard borders, dividers */
+  --color-border-subtle: var(--color-gray-100); /* usage: Subtle separators */
+  --color-border-focus: var(--color-ocean-500); /* usage: Focus rings, active states */
+  --color-border-error: var(--color-error-500); /* usage: Error input borders */
+  --color-border-success: var(--color-success-500); /* usage: Success input borders */
+
+  /* Action */
+  --color-action-primary: var(--color-yellow-500); /* usage: Primary CTA buttons */
+  --color-action-primary-hover: #ffc933; /* usage: Primary CTA hover */
+  --color-action-secondary: var(--color-navy-700); /* usage: Secondary buttons */
+  --color-action-secondary-hover: var(--color-navy-600); /* usage: Secondary hover */
+  --color-action-tertiary: var(--color-ocean-500); /* usage: Tertiary/links */
+  --color-action-disabled: var(--color-gray-300); /* usage: Disabled buttons */
+  --color-action-destructive: var(--color-error-500); /* usage: Delete, cancel actions */
+  --color-action-destructive-hover: var(--color-error-600); /* usage: Destructive hover */
+
+  /* Feedback */
+  --color-success: var(--color-success-500); /* usage: Success icons, text */
+  --color-success-bg: var(--color-success-100); /* usage: Success alert background */
+  --color-error: var(--color-error-500); /* usage: Error icons, text */
+  --color-error-bg: var(--color-error-100); /* usage: Error alert background */
+  --color-warning: var(--color-warning-500); /* usage: Warning icons, text */
+  --color-warning-bg: var(--color-warning-100); /* usage: Warning alert background */
+  --color-info: var(--color-info-500); /* usage: Info icons, text */
+  --color-info-bg: var(--color-info-100); /* usage: Info alert background */
+}

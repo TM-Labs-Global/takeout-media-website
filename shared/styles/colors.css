@@ -1,0 +1,109 @@
+:root {
+  /* Navy */
+  --color-navy-100: #e6f0f5; /* usage: Lightest backgrounds, subtle tints */
+  --color-navy-200: #b3d1e0; /* usage: Light backgrounds, disabled states */
+  --color-navy-300: #80b3cc; /* usage: Borders, dividers */
+  --color-navy-400: #4d94b7; /* usage: Placeholder text, icons */
+  --color-navy-500: #1a75a3; /* usage: Secondary text, hover states */
+  --color-navy-600: #0a5a82; /* usage: Hover states, secondary surfaces */
+  --color-navy-700: #023047; /* usage: Primary - Headers, nav, text emphasis */
+  --color-navy-800: #012033; /* usage: Deep backgrounds, overlays */
+  --color-navy-900: #011220; /* usage: Darkest - High contrast elements */
+
+  /* Sky Blue */
+  --color-sky-100: #e8f5fa; /* usage: Lightest backgrounds, subtle fills */
+  --color-sky-200: #c4e8f3; /* usage: Light card backgrounds */
+  --color-sky-300: #a0dbed; /* usage: Hover states, secondary fills */
+  --color-sky-400: #8ecae6; /* usage: Primary - Backgrounds, soft gradients */
+  --color-sky-500: #5dbdd9; /* usage: Interactive elements, badges */
+  --color-sky-600: #3aa8c7; /* usage: Hover states */
+  --color-sky-700: #2993b0; /* usage: Active states */
+  --color-sky-800: #1a6d83; /* usage: Dark accents */
+  --color-sky-900: #0d4756; /* usage: Darkest - Text on light sky backgrounds */
+
+  /* Ocean Blue */
+  --color-ocean-100: #e4f4f7; /* usage: Lightest backgrounds */
+  --color-ocean-200: #b8e1ea; /* usage: Light fills, disabled buttons */
+  --color-ocean-300: #8ccedd; /* usage: Borders, secondary elements */
+  --color-ocean-400: #60bbcf; /* usage: Hover states */
+  --color-ocean-500: #219ebc; /* usage: Primary - Buttons, links, selection */
+  --color-ocean-600: #1a7a94; /* usage: Hover states, active elements */
+  --color-ocean-700: #145d71; /* usage: Pressed states */
+  --color-ocean-800: #0e414f; /* usage: Dark accents */
+  --color-ocean-900: #08242d; /* usage: Darkest - Text on light ocean backgrounds */
+
+  /* Yellow */
+  --color-yellow-100: #fff8e6; /* usage: Lightest - Alert backgrounds */
+  --color-yellow-200: #ffefc2; /* usage: Light highlights, subtle emphasis */
+  --color-yellow-300: #ffe699; /* usage: Soft highlights */
+  --color-yellow-400: #ffdc70; /* usage: Hover states, badges */
+  --color-yellow-500: #ffb703; /* usage: Primary - CTAs, important actions */
+  --color-yellow-600: #e6a503; /* usage: Hover states on yellow */
+  --color-yellow-700: #cc9203; /* usage: Pressed states */
+
+  /* Orange */
+  --color-orange-100: #fff0e0; /* usage: Lightest - Notification backgrounds */
+  --color-orange-200: #ffdbb8; /* usage: Light fills */
+  --color-orange-300: #ffc68f; /* usage: Soft accents */
+  --color-orange-400: #ffb167; /* usage: Hover states */
+  --color-orange-500: #fb8500; /* usage: Primary - Notifications, energy, promos */
+  --color-orange-600: #e27800; /* usage: Hover states */
+  --color-orange-700: #c96a00; /* usage: Pressed states */
+
+  /* Success */
+  --color-success-100: #ecfdf5;
+  --color-success-200: #d1fae5;
+  --color-success-300: #a7f3d0;
+  --color-success-400: #6ee7b7;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
+
+  /* Error */
+  --color-error-100: #fef2f2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+
+  /* Warning */
+  --color-warning-100: #fffbeb;
+  --color-warning-200: #fef3c7;
+  --color-warning-300: #fde68a;
+  --color-warning-400: #fcd34d;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+
+  /* Info */
+  --color-info-100: #e0f7ff;
+  --color-info-200: #b8ecf8;
+  --color-info-300: #8cddf0;
+  --color-info-400: #5cc8e5;
+  --color-info-500: #219ebc;
+  --color-info-600: #1a7a94;
+  --color-info-700: #145d71;
+  --color-info-800: #0e414f;
+  --color-info-900: #08242d;
+
+  /* Neutral */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+}
