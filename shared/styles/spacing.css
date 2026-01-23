@@ -1,9 +1,0 @@
-:root {
-  --spacing-xs: 4px; /* usage: Tight spacing, icon gaps */
-  --spacing-sm: 8px; /* usage: Related elements */
-  --spacing-md: 16px; /* usage: Component padding */
-  --spacing-lg: 24px; /* usage: Section gaps */
-  --spacing-xl: 32px; /* usage: Major sections */
-  --spacing-2xl: 48px; /* usage: Page sections */
-  --spacing-3xl: 64px; /* usage: Hero spacing */
-}

@@ -1,76 +1,97 @@
 :root {
-  --font-hero: "Brush Script MT", cursive; /* Using Tahu fallback as per design sys note */
-  --font-primary: "Poppins", sans-serif;
+  /* Font Families */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-lg: 1.125rem;
+  /* 18px */
+  --text-xl: 1.25rem;
+  /* 20px */
+  --text-2xl: 1.5rem;
+  /* 24px */
+  --text-3xl: 1.875rem;
+  /* 30px */
+  --text-4xl: 2.25rem;
+  /* 36px */
+  --text-5xl: 3rem;
+  /* 48px */
+
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
 }
 
-.text-hero-display {
-  font-family: var(--font-hero);
-  font-size: 56px;
-  font-weight: 400;
-  line-height: 1.1;
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
 }
 
-.text-display {
-  font-family: var(--font-primary);
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
 }
 
-.text-h1 {
-  font-family: var(--font-primary);
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.2;
+h1 {
+  font-size: var(--text-5xl);
 }
 
-.text-h2 {
-  font-family: var(--font-primary);
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.3;
+h2 {
+  font-size: var(--text-4xl);
 }
 
-.text-h3 {
-  font-family: var(--font-primary);
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.4;
+h3 {
+  font-size: var(--text-3xl);
 }
 
-.text-h4 {
-  font-family: var(--font-primary);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.4;
+h4 {
+  font-size: var(--text-2xl);
 }
 
-.text-body-large {
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
+h5 {
+  font-size: var(--text-xl);
 }
 
-.text-body {
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
+h6 {
+  font-size: var(--text-lg);
 }
 
-.text-caption {
-  font-family: var(--font-primary);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.4;
+p {
+  margin-bottom: var(--spacing-4);
+  color: var(--text-secondary);
 }
 
-.text-overline {
-  font-family: var(--font-primary);
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.3;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+/* Utilities */
+.text-brand {
+  color: var(--text-brand);
+}
+
+.text-subtle {
+  color: var(--text-tertiary);
 }
