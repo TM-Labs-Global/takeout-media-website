@@ -1,7 +1,6 @@
-"use client";
-
 import { Home, Plane, Hotel, Ship, Search, User, Menu, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { Text } from "@/shared/components/ui";
 
 export function NavigationShowcase() {
     const [activeTab, setActiveTab] = useState("flights");
@@ -9,14 +8,14 @@ export function NavigationShowcase() {
     return (
         <section className="space-y-8">
             <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Navigation</h2>
-                <p className="text-gray-600">Site-wide and component-level navigation patterns.</p>
+                <Text variant="h2" weight="bold" className="mb-2 block">Navigation</Text>
+                <Text variant="base" intent="secondary">Site-wide and component-level navigation patterns.</Text>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-10">
                 {/* Mobile Tab Bar */}
                 <div className="max-w-md mx-auto">
-                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4 text-center">Mobile Tab Bar</h3>
+                    <Text variant="xs" weight="semibold" className="uppercase tracking-wider mb-4 block text-center" intent="muted">Mobile Tab Bar</Text>
                     <div className="bg-white border border-[var(--color-border-default)] rounded-2xl flex items-center justify-around p-2 shadow-xl">
                         {[
                             { id: 'home', icon: Home, label: 'Home' },
@@ -28,12 +27,12 @@ export function NavigationShowcase() {
                                 key={item.id}
                                 onClick={() => setActiveTab(item.id)}
                                 className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all ${activeTab === item.id
-                                        ? 'text-[var(--color-action-secondary)] bg-[var(--color-navy-100)]'
-                                        : 'text-[var(--color-text-tertiary)] hover:bg-[var(--color-bg-muted)]'
+                                    ? 'text-[var(--color-action-secondary)] bg-[var(--color-navy-100)]'
+                                    : 'text-[var(--color-text-tertiary)] hover:bg-[var(--color-bg-muted)]'
                                     }`}
                             >
                                 <item.icon className="w-6 h-6" />
-                                <span className="text-[10px] font-bold uppercase">{item.label}</span>
+                                <Text variant="xs" weight="bold" className="uppercase" style={{ fontSize: '10px' }} intent={activeTab === item.id ? 'primary' : 'muted'}>{item.label}</Text>
                             </button>
                         ))}
                     </div>
@@ -41,17 +40,17 @@ export function NavigationShowcase() {
 
                 {/* Desktop Tabs */}
                 <div>
-                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Desktop Sub-Tabs</h3>
+                    <Text variant="xs" weight="semibold" className="uppercase tracking-wider mb-4 block" intent="muted">Desktop Sub-Tabs</Text>
                     <div className="flex items-center gap-2 border-b border-[var(--color-border-default)]">
                         {['All Items', 'Completed', 'Processing', 'Cancelled'].map((tab, i) => (
                             <button
                                 key={tab}
-                                className={`px-6 py-4 text-sm font-semibold border-b-2 transition-all ${i === 0
-                                        ? 'border-[var(--color-action-secondary)] text-[var(--color-action-secondary)]'
-                                        : 'border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-action-secondary)]'
+                                className={`px-6 py-4 border-b-2 transition-all ${i === 0
+                                    ? 'border-[var(--color-action-secondary)] text-[var(--color-action-secondary)]'
+                                    : 'border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-action-secondary)]'
                                     }`}
                             >
-                                {tab}
+                                <Text variant="sm" weight="semibold" className="text-inherit">{tab}</Text>
                             </button>
                         ))}
                     </div>
@@ -59,13 +58,13 @@ export function NavigationShowcase() {
 
                 {/* Breadcrumbs */}
                 <div>
-                    <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Breadcrumbs</h3>
-                    <div className="flex items-center gap-2 text-sm">
-                        <span className="text-[var(--color-text-secondary)] hover:text-[var(--color-action-secondary)] cursor-pointer">Dashboard</span>
+                    <Text variant="xs" weight="semibold" className="uppercase tracking-wider mb-4 block" intent="muted">Breadcrumbs</Text>
+                    <div className="flex items-center gap-2">
+                        <Text variant="sm" intent="secondary" className="hover:text-[var(--color-action-secondary)] cursor-pointer">Dashboard</Text>
                         <ChevronRight className="w-4 h-4 text-gray-400" />
-                        <span className="text-[var(--color-text-secondary)] hover:text-[var(--color-action-secondary)] cursor-pointer">Bookings</span>
+                        <Text variant="sm" intent="secondary" className="hover:text-[var(--color-action-secondary)] cursor-pointer">Bookings</Text>
                         <ChevronRight className="w-4 h-4 text-gray-400" />
-                        <span className="text-[var(--color-text-primary)] font-bold">Flight Details</span>
+                        <Text variant="sm" weight="bold">Flight Details</Text>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Plane,
     Hotel,
@@ -25,6 +23,7 @@ import {
     Palmtree,
     Car,
 } from "lucide-react";
+import { Text } from "@/shared/components/ui";
 
 export function IconsShowcase() {
     const iconGroups = [
@@ -76,18 +75,18 @@ export function IconsShowcase() {
     return (
         <section className="space-y-8">
             <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Icon Library</h2>
-                <p className="text-gray-600">
+                <Text variant="h2" weight="bold" className="mb-2 block">Icon Library</Text>
+                <Text variant="base" intent="secondary">
                     Core iconography used across the plateforme from Lucide React.
-                </p>
+                </Text>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-10">
                 {iconGroups.map((group) => (
                     <div key={group.name}>
-                        <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
+                        <Text variant="xs" weight="semibold" className="uppercase tracking-wider mb-4 block" intent="muted">
                             {group.name}
-                        </h3>
+                        </Text>
                         <div className="grid grid-cols-6 gap-6">
                             {group.icons.map((item, i) => (
                                 <div
@@ -95,9 +94,9 @@ export function IconsShowcase() {
                                     className="flex flex-col items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[var(--color-navy-100)] transition-colors group"
                                 >
                                     <item.Icon className="w-8 h-8 text-[var(--color-text-secondary)] group-hover:text-[var(--color-action-secondary)]" />
-                                    <span className="text-xs font-medium text-gray-500">
+                                    <Text variant="xs" weight="medium" intent="muted">
                                         {item.label}
-                                    </span>
+                                    </Text>
                                 </div>
                             ))}
                         </div>
@@ -105,14 +104,14 @@ export function IconsShowcase() {
                 ))}
 
                 <div className="p-4 bg-[var(--color-ocean-100)] rounded-lg">
-                    <p className="text-sm text-[var(--color-ocean-800)]">
-                        <strong>Usage Note:</strong> Icons should generally use{" "}
+                    <Text variant="sm" className="text-[var(--color-ocean-800)] block">
+                        <Text weight="bold" className="text-inherit">Usage Note:</Text> Icons should generally use{" "}
                         <code className="bg-white/50 px-1 rounded">
                             color-text-secondary
                         </code>{" "}
                         for default states and shift to brand colors for interactive or
                         brand-critical moments.
-                    </p>
+                    </Text>
                 </div>
             </div>
         </section>
