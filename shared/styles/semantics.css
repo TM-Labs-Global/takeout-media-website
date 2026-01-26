@@ -18,8 +18,21 @@
   --bg-danger-hover: var(--color-error-600);
   --bg-danger-subtle: var(--color-error-50);
 
+  /* Action Colors */
+  --color-action-primary: var(--color-sun-500);
+  --color-action-primary-hover: var(--color-sun-600);
+  --color-action-secondary: var(--color-navy-700);
+  --color-action-secondary-hover: var(--color-navy-800);
+  --color-action-tertiary: var(--color-ocean-600);
+  --color-action-tertiary-hover: var(--color-ocean-700);
+  --color-action-disabled: var(--color-neutral-200);
+
+  --foreground: var(--text-base);
+  --background: var(--bg-page);
+
   /* Text Colors */
-  --text-primary: var(--color-neutral-900);
+  --text-base: var(--color-neutral-900);
+  --text-primary: var(--color-primary-600);
   --text-secondary: var(--color-neutral-600);
   --text-tertiary: var(--color-neutral-400);
   --text-disabled: var(--color-neutral-300);
@@ -61,7 +74,8 @@
     --bg-surface-hover: var(--color-neutral-800);
     --bg-surface-active: var(--color-neutral-700);
 
-    --text-primary: var(--color-neutral-50);
+    --text-base: var(--color-neutral-50);
+    --text-primary: var(--color-primary-300);
     --text-secondary: var(--color-neutral-400);
     --text-tertiary: var(--color-neutral-500);
 

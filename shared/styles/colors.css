@@ -73,6 +73,22 @@
   --color-info-600: #2563eb;
   --color-info-700: #1d4ed8;
 
+  /* Adventure Brand Palette */
+  --color-sun-50: #fff9eb;
+  --color-sun-100: #ffefc2;
+  --color-sun-500: #ffc20a; /* Primary CTA Yellow */
+  --color-sun-600: #e6af09;
+  
+  --color-navy-50: #f0f2f5;
+  --color-navy-600: #1a2b4b;
+  --color-navy-700: #121e35; /* Secondary Navy */
+  --color-navy-800: #0b1220;
+  
+  --color-ocean-50: #f0f9ff;
+  --color-ocean-500: #0ea5e9;
+  --color-ocean-600: #0284c7; /* Tertiary Blue */
+  --color-ocean-700: #0369a1;
+
   /* Base */
   --color-white: #ffffff;
   --color-black: #000000;

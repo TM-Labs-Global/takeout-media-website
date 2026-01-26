@@ -41,7 +41,7 @@
 
 body {
   font-family: var(--font-sans);
-  color: var(--text-primary);
+  color: var(--text-base);
   line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
 }
@@ -54,7 +54,7 @@ h5,
 h6 {
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
-  color: var(--text-primary);
+  color: var(--text-base);
   line-height: var(--leading-tight);
 }
 
@@ -88,10 +88,32 @@ p {
 }
 
 /* Utilities */
-.text-brand {
-  color: var(--text-brand);
-}
 
-.text-subtle {
-  color: var(--text-tertiary);
-}
+/* Size Variants */
+.text-xs { font-size: var(--text-xs); line-height: var(--leading-normal); }
+.text-sm { font-size: var(--text-sm); line-height: var(--leading-normal); }
+.text-base { font-size: var(--text-base); line-height: var(--leading-normal); }
+.text-lg { font-size: var(--text-lg); line-height: var(--leading-snug); }
+.text-xl { font-size: var(--text-xl); line-height: var(--leading-snug); }
+.text-2xl { font-size: var(--text-2xl); line-height: var(--leading-tight); }
+.text-3xl { font-size: var(--text-3xl); line-height: var(--leading-tight); }
+.text-4xl { font-size: var(--text-4xl); line-height: var(--leading-tight); }
+.text-5xl { font-size: var(--text-5xl); line-height: var(--leading-tight); }
+
+/* Weight Variants */
+.font-regular { font-weight: var(--weight-regular); }
+.font-medium { font-weight: var(--weight-medium); }
+.font-semibold { font-weight: var(--weight-semibold); }
+.font-bold { font-weight: var(--weight-bold); }
+
+/* Intent Variants (Colors) */
+.text-default { color: var(--text-base); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-tertiary); }
+.text-brand { color: var(--text-brand); }
+.text-error { color: var(--text-error); }
+.text-success { color: var(--text-success); }
+.text-warning { color: var(--text-warning); }
+.text-info { color: var(--text-info); }
+.text-inverse { color: var(--text-inverse); }

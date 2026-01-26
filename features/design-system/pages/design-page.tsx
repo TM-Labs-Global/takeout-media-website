@@ -1,29 +1,57 @@
-import { Actions, DesignShowcase, Hero } from "../components";
+import fs from "fs";
+import path from "path";
+import {
+    parseColorTokens,
+    parseSemanticTokens,
+    parseTypographyTokens,
+    parseSpacingTokens,
+} from "@/shared/utils/design-tokens";
+import { DesignSystemShowcase } from "../components";
 
-export function HomePage() {
+export default function DesignPage() {
+    const colorsPath = path.join(
+        process.cwd(),
+        "shared",
+        "styles",
+        "colors.css",
+    );
+    const semanticPath = path.join(
+        process.cwd(),
+        "shared",
+        "styles",
+        "semantics.css",
+    );
+    const typographyPath = path.join(
+        process.cwd(),
+        "shared",
+        "styles",
+        "typography.css",
+    );
+    const spacingPath = path.join(
+        process.cwd(),
+        "shared",
+        "styles",
+        "spacing.css",
+    );
+
+    const colorsCss = fs.readFileSync(colorsPath, "utf8");
+    const semanticCss = fs.readFileSync(semanticPath, "utf8");
+    const typographyCss = fs.readFileSync(typographyPath, "utf8");
+    const spacingCss = fs.existsSync(spacingPath)
+        ? fs.readFileSync(spacingPath, "utf8")
+        : "";
+
+    const colors = parseColorTokens(colorsCss);
+    const semanticTokens = parseSemanticTokens(semanticCss);
+    const typography = parseTypographyTokens(typographyCss);
+    const spacing = parseSpacingTokens(spacingCss);
+
     return (
-        <div className="flex flex-col min-h-screen bg-[var(--color-bg-page)] font-sans">
-            {/* Hero Section */}
-            <section className="w-full bg-[var(--color-bg-elevated)] border-b border-[var(--color-border-subtle)]">
-                <div className="w-full max-w-7xl mx-auto py-24 px-6 md:px-12 lg:px-24">
-                    <Hero />
-                    <Actions />
-                </div>
-            </section>
-
-            {/* Design Showcase Section */}
-            <section className="w-full flex-1 bg-[var(--color-bg-page)]">
-                <div className="w-full max-w-7xl mx-auto py-24 px-6 md:px-12 lg:px-24">
-                    <DesignShowcase />
-                </div>
-            </section>
-
-            {/* Footer Placeholder for visual completion */}
-            <footer className="w-full py-12 border-t border-[var(--color-border-subtle)] bg-[var(--color-bg-muted)]">
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center text-caption text-[var(--color-text-tertiary)]">
-                    © 2024 Juyonna Travels Design System. All rights reserved.
-                </div>
-            </footer>
-        </div>
+        <DesignSystemShowcase
+            colors={colors}
+            semanticTokens={semanticTokens}
+            typography={typography}
+            spacing={spacing}
+        />
     );
 }

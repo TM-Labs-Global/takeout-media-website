@@ -1,5 +1,4 @@
-"use client";
-
+import { Text } from "@/shared/components/ui";
 import type { TypographyToken } from "@/shared/utils/design-tokens";
 
 interface TypographyShowcaseProps {
@@ -10,41 +9,42 @@ export function TypographyShowcase({ typography }: TypographyShowcaseProps) {
     return (
         <section className="space-y-8">
             <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Typography</h2>
-                <p className="text-gray-600">
+                <Text variant="h2" weight="bold" className="mb-2 block">Typography</Text>
+                <Text variant="base" intent="secondary">
                     Poppins for all UI content. TAHU decorative font for hero statements only.
-                </p>
+                </Text>
             </div>
 
             {/* Font Family Info */}
             <div className="bg-gradient-to-r from-[var(--color-navy-700)] to-[var(--color-navy-600)] rounded-xl p-6 text-white">
-                <h3 className="text-lg font-semibold mb-4">Font Families</h3>
+                <Text variant="lg" weight="semibold" className="mb-4 block" intent="inverse">Font Families</Text>
                 <div className="grid grid-cols-2 gap-6">
                     <div>
-                        <p className="text-[var(--color-sun-500)] text-sm font-semibold mb-2">
+                        <Text variant="xs" weight="semibold" className="mb-2 block text-[var(--color-sun-500)]">
                             PRIMARY: POPPINS
-                        </p>
-                        <p className="text-[var(--color-sky-400)] text-sm">
+                        </Text>
+                        <Text variant="sm" className="block text-[var(--color-sky-400)]">
                             Body, UI labels, form fields, card titles, buttons, navigation
-                        </p>
-                        <p className="text-2xl font-semibold mt-3">Aa Bb Cc 123</p>
+                        </Text>
+                        <Text variant="2xl" weight="semibold" className="mt-3 block">Aa Bb Cc 123</Text>
                     </div>
                     <div>
-                        <p className="text-[var(--color-sun-500)] text-sm font-semibold mb-2">
+                        <Text variant="xs" weight="semibold" className="mb-2 block text-[var(--color-sun-500)]">
                             DECORATIVE: TAHU
-                        </p>
-                        <p className="text-[var(--color-sky-400)] text-sm">
+                        </Text>
+                        <Text variant="sm" className="block text-[var(--color-sky-400)]">
                             Hero section statements only. Never in small UI components.
-                        </p>
-                        <p
-                            className="text-3xl mt-3"
+                        </Text>
+                        <Text
+                            variant="3xl"
+                            className="mt-3 block"
                             style={{ fontFamily: '"Brush Script MT", cursive' }}
                         >
                             Find Your Adventure
-                        </p>
-                        <p className="text-xs text-[var(--color-sky-400)]/60 mt-2">
+                        </Text>
+                        <Text variant="xs" className="mt-2 block opacity-60 text-[var(--color-sky-400)]">
                             Preview approximation. Use Tahu.ttf in production.
-                        </p>
+                        </Text>
                     </div>
                 </div>
             </div>
@@ -53,59 +53,63 @@ export function TypographyShowcase({ typography }: TypographyShowcaseProps) {
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                 <div className="flex items-start gap-6">
                     <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                        <Text variant="lg" weight="semibold" className="mb-2 block">
                             TAHU Font Reference
-                        </h3>
-                        <p className="text-sm text-gray-600 mb-4">
+                        </Text>
+                        <Text variant="sm" intent="secondary" className="mb-4 block">
                             Handwritten brush script font for hero statements. Expressive,
                             warm, adventure-forward.
-                        </p>
+                        </Text>
                         <div className="bg-gray-50 rounded-lg p-6">
-                            <p
-                                className="text-4xl text-[var(--color-navy-700)]"
+                            <Text
+                                variant="4xl"
+                                className="text-[var(--color-navy-700)] block"
                                 style={{ fontFamily: '"Brush Script MT", cursive' }}
                             >
                                 A B C D E F G H I J K L M
-                            </p>
-                            <p
-                                className="text-4xl text-[var(--color-navy-700)] mt-2"
+                            </Text>
+                            <Text
+                                variant="4xl"
+                                className="text-[var(--color-navy-700)] mt-2 block"
                                 style={{ fontFamily: '"Brush Script MT", cursive' }}
                             >
                                 N O P Q R S T U V W X Y Z
-                            </p>
-                            <p
-                                className="text-3xl text-[var(--color-navy-700)] mt-4"
+                            </Text>
+                            <Text
+                                variant="3xl"
+                                className="text-[var(--color-navy-700)] mt-4 block"
                                 style={{ fontFamily: '"Brush Script MT", cursive' }}
                             >
                                 a b c d e f g h i j k l m n o p q r s t u v w x y z
-                            </p>
-                            <p
-                                className="text-3xl text-[var(--color-navy-700)] mt-2"
+                            </Text>
+                            <Text
+                                variant="3xl"
+                                className="text-[var(--color-navy-700)] mt-2 block"
                                 style={{ fontFamily: '"Brush Script MT", cursive' }}
                             >
                                 0 1 2 3 4 5 6 7 8 9
-                            </p>
+                            </Text>
                         </div>
-                        <p className="text-xs text-gray-400 mt-3">
+                        <Text variant="xs" intent="muted" className="mt-3 block">
                             Note: This preview uses a system brush font. The actual Tahu font
                             has more expressive, hand-drawn strokes.
-                        </p>
+                        </Text>
                     </div>
                     <div className="w-48 flex-shrink-0">
                         <div className="bg-[var(--color-navy-700)] rounded-lg p-4 text-center">
-                            <p className="text-xs text-[var(--color-sky-400)] mb-2">
+                            <Text variant="xs" weight="semibold" className="mb-2 block text-[var(--color-sky-400)] uppercase">
                                 FONT FILE
-                            </p>
-                            <p className="text-white font-semibold">Tahu.ttf</p>
-                            <p className="text-xs text-[var(--color-sky-400)] mt-2">
+                            </Text>
+                            <Text weight="semibold" intent="inverse" className="block">Tahu.ttf</Text>
+                            <Text variant="xs" className="mt-2 block text-[var(--color-sky-400)]">
                                 181 glyphs
-                            </p>
+                            </Text>
                         </div>
-                        <div className="mt-3 space-y-2 text-xs text-gray-500">
-                            <p>Uppercase letters</p>
-                            <p>Lowercase letters</p>
-                            <p>Numbers 0-9</p>
-                            <p>Special characters</p>
+                        <div className="mt-3 space-y-2">
+                            <Text variant="xs" intent="muted" className="block">Uppercase letters</Text>
+                            <Text variant="xs" intent="muted" className="block">Lowercase letters</Text>
+                            <Text variant="xs" intent="muted" className="block">Numbers 0-9</Text>
+                            <Text variant="xs" intent="muted" className="block">Special characters</Text>
                         </div>
                     </div>
                 </div>
@@ -120,18 +124,18 @@ export function TypographyShowcase({ typography }: TypographyShowcaseProps) {
                     >
                         <div className="flex items-start justify-between gap-8">
                             <div className="flex-1">
-                                <p className={`text-[var(--color-text-primary)] mb-2 ${type.className}`}>
+                                <Text className={`mb-2 block ${type.className}`} intent="default">
                                     {type.sample}
-                                </p>
+                                </Text>
                             </div>
                             <div className="flex-shrink-0 text-right">
-                                <p className="font-semibold text-gray-900">{type.name}</p>
-                                <p className="text-xs text-gray-500 font-mono mt-1">
+                                <Text weight="semibold" className="block">{type.name}</Text>
+                                <Text variant="xs" intent="muted" className="font-mono mt-1 block">
                                     {type.size} / {type.weight} / {type.lineHeight}
-                                </p>
-                                <p className="text-xs text-[var(--color-ocean-500)] mt-1">
+                                </Text>
+                                <Text variant="xs" className="mt-1 block text-[var(--color-ocean-500)]">
                                     {type.note}
-                                </p>
+                                </Text>
                             </div>
                         </div>
                     </div>

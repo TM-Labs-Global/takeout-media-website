@@ -2,6 +2,7 @@
 
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
+import { Text } from "@/shared/components/ui";
 import type { ColorToken } from "@/shared/utils/design-tokens";
 
 interface ColorsShowcaseProps {
@@ -20,15 +21,15 @@ export function ColorsShowcase({ colors }: ColorsShowcaseProps) {
     return (
         <section className="space-y-8">
             <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Color Palette</h2>
-                <p className="text-gray-600">
+                <Text variant="h2" weight="bold" className="mb-2 block">Color Palette</Text>
+                <Text variant="base" intent="secondary">
                     Adventure-forward, warm, and trustworthy color system for Juyonna Travels.
-                </p>
+                </Text>
             </div>
 
             {Object.entries(colors).map(([category, colorList]) => (
                 <div key={category} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 capitalize mb-4">{category} Colors</h3>
+                    <Text variant="lg" weight="semibold" intent='secondary' className="capitalize mb-4 block">{category} Colors</Text>
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                         {colorList.map((color) => (
                             <div key={color.hex} className="group">
@@ -45,9 +46,9 @@ export function ColorsShowcase({ colors }: ColorsShowcaseProps) {
                                         )}
                                     </div>
                                 </div>
-                                <p className="font-medium text-gray-900 text-sm">{color.name}</p>
-                                <p className="text-xs text-gray-500 font-mono">{color.hex}</p>
-                                <p className="text-xs text-gray-400 mt-1">{color.usage}</p>
+                                <Text variant="sm" weight="medium" intent={'muted'} className="block text-gray-900">{color.name}</Text>
+                                <Text variant="xs" intent="muted" className="font-mono block">{color.hex}</Text>
+                                <Text variant="xs" intent="muted" className="mt-1 block">{color.usage}</Text>
                             </div>
                         ))}
                     </div>

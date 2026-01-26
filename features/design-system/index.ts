@@ -1,1 +1,1 @@
-export * from "./components/DesignSystemShowcase";
+export * from "./components/design-system-showcase";

@@ -1,22 +1,21 @@
-"use client";
-
 import { Plane, Hotel, Ship, FileText } from "lucide-react";
+import { Text } from "@/shared/components/ui";
 
 export function CardsShowcase() {
     return (
         <section className="space-y-8">
             <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Cards</h2>
-                <p className="text-gray-600">
+                <Text variant="h2" weight="bold" className="mb-2 block">Cards</Text>
+                <Text variant="base" intent="secondary">
                     Card components for displaying travel content and services.
-                </p>
+                </Text>
             </div>
 
             {/* Service Cards */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <Text variant="lg" weight="semibold" className="mb-4 block">
                     Service Cards
-                </h3>
+                </Text>
                 <div className="grid grid-cols-4 gap-4">
                     {[
                         {
@@ -53,12 +52,12 @@ export function CardsShowcase() {
                             >
                                 <service.icon className={`w-6 h-6 ${service.iconClass}`} />
                             </div>
-                            <h4 className="font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-action-secondary)]">
+                            <Text variant="base" weight="semibold" className="group-hover:text-[var(--color-action-secondary)] block">
                                 {service.name}
-                            </h4>
-                            <p className="text-sm text-[var(--color-text-secondary)] mt-1">
+                            </Text>
+                            <Text variant="sm" intent="secondary" className="mt-1 block">
                                 Book now →
-                            </p>
+                            </Text>
                         </div>
                     ))}
                 </div>
@@ -66,9 +65,9 @@ export function CardsShowcase() {
 
             {/* Destination Card */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <Text variant="lg" weight="semibold" className="mb-4 block">
                     Destination Card
-                </h3>
+                </Text>
                 <div className="grid grid-cols-3 gap-6">
                     <div className="rounded-xl overflow-hidden shadow-lg group cursor-pointer">
                         <div className="relative h-48 bg-gradient-to-br from-[var(--color-sky-300)] to-[var(--color-ocean-500)]">
@@ -77,23 +76,23 @@ export function CardsShowcase() {
                                 alt="Dubai"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
-                            <div className="absolute top-3 right-3 bg-[var(--color-action-primary)] text-[var(--color-text-primary)] text-xs font-bold px-2 py-1 rounded">
-                                TRENDING
+                            <div className="absolute top-3 right-3 bg-[var(--color-action-primary)] rounded px-2 py-1">
+                                <Text variant="xs" weight="bold">TRENDING</Text>
                             </div>
                         </div>
                         <div className="p-4 bg-white">
-                            <h4 className="font-semibold text-[var(--color-text-primary)]">
+                            <Text variant="base" weight="semibold" className="block">
                                 Dubai, UAE
-                            </h4>
-                            <p className="text-sm text-[var(--color-text-secondary)] mt-1">
+                            </Text>
+                            <Text variant="sm" intent="secondary" className="mt-1 block">
                                 From ₦850,000
-                            </p>
+                            </Text>
                             <div className="flex items-center gap-2 mt-3">
-                                <span className="text-xs bg-[var(--color-navy-100)] text-[var(--color-text-primary)] px-2 py-1 rounded">
-                                    5 Days
+                                <span className="bg-[var(--color-navy-100)] px-2 py-1 rounded">
+                                    <Text variant="xs">5 Days</Text>
                                 </span>
-                                <span className="text-xs bg-[var(--color-navy-100)] text-[var(--color-text-primary)] px-2 py-1 rounded">
-                                    All Inclusive
+                                <span className="bg-[var(--color-navy-100)] px-2 py-1 rounded">
+                                    <Text variant="xs">All Inclusive</Text>
                                 </span>
                             </div>
                         </div>
@@ -108,18 +107,18 @@ export function CardsShowcase() {
                             />
                         </div>
                         <div className="p-4 bg-white">
-                            <h4 className="font-semibold text-[var(--color-text-primary)]">
+                            <Text variant="base" weight="semibold" className="block">
                                 Paris, France
-                            </h4>
-                            <p className="text-sm text-[var(--color-text-secondary)] mt-1">
+                            </Text>
+                            <Text variant="sm" intent="secondary" className="mt-1 block">
                                 From ₦1,200,000
-                            </p>
+                            </Text>
                             <div className="flex items-center gap-2 mt-3">
-                                <span className="text-xs bg-[var(--color-navy-100)] text-[var(--color-text-primary)] px-2 py-1 rounded">
-                                    7 Days
+                                <span className="bg-[var(--color-navy-100)] px-2 py-1 rounded">
+                                    <Text variant="xs">7 Days</Text>
                                 </span>
-                                <span className="text-xs bg-[var(--color-navy-100)] text-[var(--color-text-primary)] px-2 py-1 rounded">
-                                    Romantic
+                                <span className="bg-[var(--color-navy-100)] px-2 py-1 rounded">
+                                    <Text variant="xs">Romantic</Text>
                                 </span>
                             </div>
                         </div>
@@ -132,23 +131,23 @@ export function CardsShowcase() {
                                 alt="Maldives"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
-                            <div className="absolute top-3 right-3 bg-[var(--color-orange-500)] text-white text-xs font-bold px-2 py-1 rounded">
-                                20% OFF
+                            <div className="absolute top-3 right-3 bg-[var(--color-orange-500)] rounded px-2 py-1">
+                                <Text variant="xs" weight="bold" intent="inverse">20% OFF</Text>
                             </div>
                         </div>
                         <div className="p-4 bg-white">
-                            <h4 className="font-semibold text-[var(--color-text-primary)]">
+                            <Text variant="base" weight="semibold" className="block">
                                 Maldives
-                            </h4>
-                            <p className="text-sm text-[var(--color-text-secondary)] mt-1">
+                            </Text>
+                            <Text variant="sm" intent="secondary" className="mt-1 block">
                                 From ₦2,500,000
-                            </p>
+                            </Text>
                             <div className="flex items-center gap-2 mt-3">
-                                <span className="text-xs bg-[var(--color-navy-100)] text-[var(--color-text-primary)] px-2 py-1 rounded">
-                                    10 Days
+                                <span className="bg-[var(--color-navy-100)] px-2 py-1 rounded">
+                                    <Text variant="xs">10 Days</Text>
                                 </span>
-                                <span className="text-xs bg-[var(--color-navy-100)] text-[var(--color-text-primary)] px-2 py-1 rounded">
-                                    Luxury
+                                <span className="bg-[var(--color-navy-100)] px-2 py-1 rounded">
+                                    <Text variant="xs">Luxury</Text>
                                 </span>
                             </div>
                         </div>
@@ -158,40 +157,40 @@ export function CardsShowcase() {
 
             {/* Info Card */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <Text variant="lg" weight="semibold" className="mb-4 block">
                     Info & Stat Cards
-                </h3>
+                </Text>
                 <div className="grid grid-cols-3 gap-4">
                     <div className="p-5 bg-gradient-to-br from-[var(--color-navy-700)] to-[var(--color-navy-600)] rounded-xl text-white">
-                        <p className="text-sm text-[var(--color-sky-300)] mb-1">
+                        <Text variant="sm" className="mb-1 block opacity-80" intent="inverse">
                             Total Bookings
-                        </p>
-                        <p className="text-3xl font-bold">2,847</p>
-                        <p className="text-xs text-[var(--color-sky-300)] mt-2">
+                        </Text>
+                        <Text variant="3xl" weight="bold" className="block" intent="inverse">2,847</Text>
+                        <Text variant="xs" className="mt-2 block opacity-80" intent="inverse">
                             ↑ 12% from last month
-                        </p>
+                        </Text>
                     </div>
                     <div className="p-5 bg-gradient-to-br from-[var(--color-yellow-500)] to-[var(--color-orange-500)] rounded-xl">
-                        <p className="text-sm text-[var(--color-text-primary)] opacity-70 mb-1">
+                        <Text variant="sm" intent="primary" className="mb-1 block opacity-70">
                             Revenue
-                        </p>
-                        <p className="text-3xl font-bold text-[var(--color-text-primary)]">
+                        </Text>
+                        <Text variant="3xl" weight="bold" className="block" intent="primary">
                             ₦45.2M
-                        </p>
-                        <p className="text-xs text-[var(--color-text-primary)] opacity-70 mt-2">
+                        </Text>
+                        <Text variant="xs" intent="primary" className="mt-2 block opacity-70">
                             ↑ 8% from last month
-                        </p>
+                        </Text>
                     </div>
                     <div className="p-5 bg-white border-2 border-[var(--color-sky-300)] rounded-xl">
-                        <p className="text-sm text-[var(--color-text-secondary)] mb-1">
+                        <Text variant="sm" intent="secondary" className="mb-1 block">
                             Active Trips
-                        </p>
-                        <p className="text-3xl font-bold text-[var(--color-text-primary)]">
+                        </Text>
+                        <Text variant="3xl" weight="bold" className="block">
                             156
-                        </p>
-                        <p className="text-xs text-[var(--color-ocean-500)] mt-2">
+                        </Text>
+                        <Text variant="xs" className="mt-2 block" intent="info">
                             Currently traveling
-                        </p>
+                        </Text>
                     </div>
                 </div>
             </div>
