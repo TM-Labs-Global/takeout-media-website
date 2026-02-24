@@ -1,8 +1,8 @@
 :root {
   /* Font Families */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Graphit', 'Manrope', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Graphit', 'Manrope', system-ui, -apple-system, sans-serif;
 
   /* Font Sizes */
   --text-xs: 0.75rem;
@@ -37,6 +37,55 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
   --leading-loose: 2;
+}
+
+/* @Font-Face Definitions for Graphit */
+@font-face {
+  font-family: 'Graphit';
+  src: url('/fonts/HvDTrial_Graphit-Thin-BF649ba95b0501e.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphit';
+  src: url('/fonts/HvDTrial_Graphit-Light-BF649ba95b7de45.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphit';
+  src: url('/fonts/HvDTrial_Graphit-Regular-BF649ba95b99054.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphit';
+  src: url('/fonts/HvDTrial_Graphit-Medium-BF649ba95b835b6.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphit';
+  src: url('/fonts/HvDTrial_Graphit-Bold-BF649ba95b29d5a.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphit';
+  src: url('/fonts/HvDTrial_Graphit-Black-BF649ba95ba77e9.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
@@ -90,30 +139,105 @@ p {
 /* Utilities */
 
 /* Size Variants */
-.text-xs { font-size: var(--text-xs); line-height: var(--leading-normal); }
-.text-sm { font-size: var(--text-sm); line-height: var(--leading-normal); }
-.text-base { font-size: var(--text-base); line-height: var(--leading-normal); }
-.text-lg { font-size: var(--text-lg); line-height: var(--leading-snug); }
-.text-xl { font-size: var(--text-xl); line-height: var(--leading-snug); }
-.text-2xl { font-size: var(--text-2xl); line-height: var(--leading-tight); }
-.text-3xl { font-size: var(--text-3xl); line-height: var(--leading-tight); }
-.text-4xl { font-size: var(--text-4xl); line-height: var(--leading-tight); }
-.text-5xl { font-size: var(--text-5xl); line-height: var(--leading-tight); }
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.text-base {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+}
+
+.text-2xl {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+}
+
+.text-3xl {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+}
+
+.text-4xl {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+}
+
+.text-5xl {
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+}
 
 /* Weight Variants */
-.font-regular { font-weight: var(--weight-regular); }
-.font-medium { font-weight: var(--weight-medium); }
-.font-semibold { font-weight: var(--weight-semibold); }
-.font-bold { font-weight: var(--weight-bold); }
+.font-regular {
+  font-weight: var(--weight-regular);
+}
+
+.font-medium {
+  font-weight: var(--weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--weight-bold);
+}
 
 /* Intent Variants (Colors) */
-.text-default { color: var(--text-base); }
-.text-primary { color: var(--text-primary); }
-.text-secondary { color: var(--text-secondary); }
-.text-muted { color: var(--text-tertiary); }
-.text-brand { color: var(--text-brand); }
-.text-error { color: var(--text-error); }
-.text-success { color: var(--text-success); }
-.text-warning { color: var(--text-warning); }
-.text-info { color: var(--text-info); }
-.text-inverse { color: var(--text-inverse); }
+.text-default {
+  color: var(--text-base);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-tertiary);
+}
+
+.text-brand {
+  color: var(--text-brand);
+}
+
+.text-error {
+  color: var(--text-error);
+}
+
+.text-success {
+  color: var(--text-success);
+}
+
+.text-warning {
+  color: var(--text-warning);
+}
+
+.text-info {
+  color: var(--text-info);
+}
+
+.text-inverse {
+  color: var(--text-inverse);
+}

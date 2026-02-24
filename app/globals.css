@@ -5,14 +5,84 @@
 @import "../shared/styles/dimensions.css";
 @import "../shared/styles/effects.css";
 
-/* 2. Semantics (depends on Primitives) */
-@import "../shared/styles/semantics.css";
+/* 2. Semantics (Inlined due to build error with @import) */
+:root {
+  /* Backgrounds */
+  --bg-page: var(--color-brand-black-950);
+  --bg-surface: var(--color-brand-black-900);
+  --bg-surface-hover: var(--color-brand-black-800);
+  --bg-surface-active: var(--color-brand-black-700);
+  --bg-surface-elevated: var(--color-brand-black-800);
+
+  --bg-primary: var(--color-brand-orange-500);
+  --bg-primary-hover: var(--color-brand-orange-400);
+  --bg-primary-subtle: var(--color-brand-orange-950);
+
+  --bg-secondary: var(--color-neutral-800);
+  --bg-secondary-hover: var(--color-neutral-700);
+  --bg-secondary-subtle: var(--color-neutral-900);
+
+  --bg-danger: var(--color-error-500);
+  --bg-danger-hover: var(--color-error-500);
+  --bg-danger-subtle: var(--color-error-50);
+
+  /* Action Colors */
+  --color-action-primary: var(--color-brand-orange-500);
+  --color-action-primary-hover: var(--color-brand-orange-400);
+
+  --color-action-secondary: var(--color-white);
+  --color-action-secondary-hover: var(--color-brand-black-100);
+
+  --color-action-tertiary: var(--color-neutral-500);
+  --color-action-tertiary-hover: var(--color-neutral-400);
+
+  --color-action-disabled: var(--color-brand-black-700);
+
+  --foreground: var(--text-base);
+  --background: var(--bg-page);
+
+  /* Text Colors */
+  --text-base: var(--color-white);
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-neutral-400);
+  --text-tertiary: var(--color-neutral-500);
+  --text-disabled: var(--color-brand-black-600);
+
+  --text-brand: var(--color-brand-orange-500);
+  --text-inverse: var(--color-brand-black-950);
+
+  --text-success: var(--color-success-500);
+  --text-warning: var(--color-warning-500);
+  --text-error: var(--color-error-500);
+  --text-info: var(--color-info-500);
+
+  /* Borders */
+  --border-default: var(--color-brand-black-700);
+  --border-subtle: var(--color-brand-black-800);
+  --border-strong: var(--color-brand-black-600);
+  --border-focus: var(--color-brand-orange-500);
+
+  --border-error: var(--color-error-500);
+  --border-success: var(--color-success-500);
+
+  /* Component Specific Semantics */
+  --link-color: var(--color-brand-orange-500);
+  --link-hover: var(--color-brand-orange-400);
+
+  --shadow-card: var(--shadow-sm);
+  --shadow-popover: var(--shadow-lg);
+
+  --radius-card: var(--radius-lg);
+  --radius-button: 9999px;
+  --radius-input: var(--radius-md);
+}
 
 /* 3. Base & Components (depends on Semantics) */
 @import "../shared/styles/typography.css";
 @import "../shared/styles/button.css";
 @import "../shared/styles/input.css";
 
+/* Root Variables & Theme */
 :root {
   --background: var(--bg-page);
   --foreground: var(--text-primary);
@@ -21,12 +91,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+
+  /* Brand Colors */
+  --color-brand-orange-500: var(--color-brand-orange-500);
+  --color-brand-black-950: var(--color-brand-black-950);
+  --color-brand-cream: var(--color-brand-cream);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
 }

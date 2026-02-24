@@ -1,89 +1,73 @@
 :root {
   /* Backgrounds */
-  --bg-page: var(--color-neutral-50);
-  --bg-surface: var(--color-white);
-  --bg-surface-hover: var(--color-neutral-50);
-  --bg-surface-active: var(--color-neutral-100);
-  --bg-surface-elevated: var(--color-white);
+  --bg-page: var(--color-brand-black-950);
+  --bg-surface: var(--color-brand-black-900);
+  --bg-surface-hover: var(--color-brand-black-800);
+  --bg-surface-active: var(--color-brand-black-700);
+  --bg-surface-elevated: var(--color-brand-black-800);
 
-  --bg-primary: var(--color-primary-500);
-  --bg-primary-hover: var(--color-primary-600);
-  --bg-primary-subtle: var(--color-primary-50);
+  --bg-primary: var(--color-brand-orange-500);
+  --bg-primary-hover: var(--color-brand-orange-400);
+  /* Lighter on hover for dark mode feel */
+  --bg-primary-subtle: var(--color-brand-orange-950);
 
-  --bg-secondary: var(--color-secondary-500);
-  --bg-secondary-hover: var(--color-secondary-600);
-  --bg-secondary-subtle: var(--color-secondary-50);
+  --bg-secondary: var(--color-neutral-800);
+  --bg-secondary-hover: var(--color-neutral-700);
+  --bg-secondary-subtle: var(--color-neutral-900);
 
   --bg-danger: var(--color-error-500);
-  --bg-danger-hover: var(--color-error-600);
+  --bg-danger-hover: var(--color-error-500);
+  /* Verify if hover state needed */
   --bg-danger-subtle: var(--color-error-50);
 
   /* Action Colors */
-  --color-action-primary: var(--color-sun-500);
-  --color-action-primary-hover: var(--color-sun-600);
-  --color-action-secondary: var(--color-navy-700);
-  --color-action-secondary-hover: var(--color-navy-800);
-  --color-action-tertiary: var(--color-ocean-600);
-  --color-action-tertiary-hover: var(--color-ocean-700);
-  --color-action-disabled: var(--color-neutral-200);
+  --color-action-primary: var(--color-brand-orange-500);
+  --color-action-primary-hover: var(--color-brand-orange-400);
+
+  --color-action-secondary: var(--color-white);
+  --color-action-secondary-hover: var(--color-brand-black-100);
+
+  --color-action-tertiary: var(--color-neutral-500);
+  --color-action-tertiary-hover: var(--color-neutral-400);
+
+  --color-action-disabled: var(--color-brand-black-700);
 
   --foreground: var(--text-base);
   --background: var(--bg-page);
 
   /* Text Colors */
-  --text-base: var(--color-neutral-900);
-  --text-primary: var(--color-primary-600);
-  --text-secondary: var(--color-neutral-600);
-  --text-tertiary: var(--color-neutral-400);
-  --text-disabled: var(--color-neutral-300);
+  --text-base: var(--color-white);
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-neutral-400);
+  --text-tertiary: var(--color-neutral-500);
+  --text-disabled: var(--color-brand-black-600);
 
-  --text-brand: var(--color-primary-600);
-  --text-inverse: var(--color-white);
+  --text-brand: var(--color-brand-orange-500);
+  --text-inverse: var(--color-brand-black-950);
 
-  --text-success: var(--color-success-700);
-  --text-warning: var(--color-warning-700);
-  --text-error: var(--color-error-700);
-  --text-info: var(--color-info-700);
+  --text-success: var(--color-success-500);
+  --text-warning: var(--color-warning-500);
+  --text-error: var(--color-error-500);
+  --text-info: var(--color-info-500);
 
   /* Borders */
-  --border-default: var(--color-neutral-200);
-  --border-subtle: var(--color-neutral-100);
-  --border-strong: var(--color-neutral-300);
-  --border-focus: var(--color-primary-300);
+  --border-default: var(--color-brand-black-700);
+  --border-subtle: var(--color-brand-black-800);
+  --border-strong: var(--color-brand-black-600);
+  --border-focus: var(--color-brand-orange-500);
 
-  --border-error: var(--color-error-300);
-  --border-success: var(--color-success-300);
+  --border-error: var(--color-error-500);
+  --border-success: var(--color-success-500);
 
   /* Component Specific Semantics (mapped generally) */
-  --link-color: var(--color-primary-600);
-  --link-hover: var(--color-primary-700);
+  --link-color: var(--color-brand-orange-500);
+  --link-hover: var(--color-brand-orange-400);
 
   --shadow-card: var(--shadow-sm);
   --shadow-popover: var(--shadow-lg);
 
   --radius-card: var(--radius-lg);
-  --radius-button: var(--radius-md);
+  --radius-button: 9999px;
+  /* Pill shape by default */
   --radius-input: var(--radius-md);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark Mode Overrides */
-    --bg-page: var(--color-neutral-950);
-    --bg-surface: var(--color-neutral-900);
-    --bg-surface-hover: var(--color-neutral-800);
-    --bg-surface-active: var(--color-neutral-700);
-
-    --text-base: var(--color-neutral-50);
-    --text-primary: var(--color-primary-300);
-    --text-secondary: var(--color-neutral-400);
-    --text-tertiary: var(--color-neutral-500);
-
-    --border-default: var(--color-neutral-800);
-    --border-subtle: var(--color-neutral-900);
-    --border-strong: var(--color-neutral-700);
-
-    --bg-primary-subtle: var(--color-primary-950);
-    --bg-danger-subtle: var(--color-error-950);
-  }
 }

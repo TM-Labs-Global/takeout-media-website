@@ -28,8 +28,11 @@
 /* Variants */
 .btn-primary {
     background-color: var(--color-action-primary);
-    color: var(--color-text-primary);
+    color: var(--color-white);
+    /* Always white for contrast against orange */
     box-shadow: var(--shadow-sm);
+    font-weight: 600;
+    /* Bolder for primary actions */
 
     &:hover {
         background-color: var(--color-action-primary-hover);
@@ -42,23 +45,24 @@
 }
 
 .btn-secondary {
-    background-color: var(--color-action-secondary);
-    color: var(--color-text-inverse);
-    box-shadow: var(--shadow-sm);
+    background-color: transparent;
+    border: 1px solid var(--border-default);
+    color: var(--text-base);
+    box-shadow: none;
 
     &:hover {
-        background-color: var(--color-action-secondary-hover);
-        box-shadow: var(--shadow-md);
+        background-color: var(--bg-surface-hover);
+        border-color: var(--text-base);
     }
 }
 
 .btn-tertiary {
-    background-color: var(--color-action-tertiary);
-    color: var(--color-text-inverse);
+    background-color: var(--bg-surface-elevated);
+    color: var(--text-base);
     box-shadow: var(--shadow-sm);
 
     &:hover {
-        background-color: var(--color-ocean-600);
+        background-color: var(--bg-surface-hover);
         box-shadow: var(--shadow-md);
     }
 }
