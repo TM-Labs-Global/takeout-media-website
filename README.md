@@ -1,4 +1,4 @@
-# Next.js Template - Juyonna Travels
+# Next.js Template - Takeout Media Website
 
 A feature-driven Next.js template with a built-in design system and documentation engine.
 
