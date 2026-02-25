@@ -4,6 +4,7 @@ import Navbar from "@/shared/components/layout/Navbar";
 import SocialSidebar from "@/shared/components/layout/SocialSidebar";
 import FloatingSearch from "@/shared/components/layout/FloatingSearch";
 import Footer from "@/shared/components/layout/Footer";
+import ClientOnly from "@/shared/components/layout/ClientOnly";
 
 export const metadata: Metadata = {
   title: "Takeout Media | Visionary Creative Laboratory",
@@ -33,8 +34,10 @@ export default function RootLayout({
         <Navbar />
         <SocialSidebar />
         <FloatingSearch />
-        <main className="flex-grow pt-24"> {/* Only top padding remains for Navbar spacing */}
-          {children}
+        <main className="flex-grow pt-24">
+          <ClientOnly>
+            {children}
+          </ClientOnly>
         </main>
         <Footer />
       </body>
