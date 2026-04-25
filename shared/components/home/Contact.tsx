@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Mail, Phone, MessageSquare } from "lucide-react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -12,24 +12,59 @@ if (typeof window !== "undefined") {
 
 export default function Contact() {
     const sectionRef = useRef<HTMLElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     useGSAP(
         () => {
-            gsap.from(".contact-fade-up", {
-                y: 50,
-                opacity: 0,
+            gsap.to(".contact-fade-up", {
+                y: 0,
+                opacity: 1,
                 duration: 1,
                 stagger: 0.15,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top 80%",
-                    toggleActions: "play none none reverse",
+                    toggleActions: "play none none none",
                 },
             });
         },
         { scope: sectionRef }
     );
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus('idle');
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <section
@@ -88,7 +123,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
 
                     {/* Contact Form */}
-                    <div className="contact-fade-up">
+                    <div className="contact-fade-up opacity-0 translate-y-8">
                         <span className="text-xs font-mono uppercase tracking-[0.4em] text-neutral-500 mb-6 block">
                             Say Hello
                         </span>
@@ -96,46 +131,61 @@ export default function Contact() {
                             Request a free quote
                         </h2>
 
-                        <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-8" onSubmit={handleSubmit}>
                             <div className="space-y-4">
                                 <label className="text-sm font-bold block">Your name</label>
                                 <input
+                                    name="name"
                                     type="text"
+                                    required
                                     className="w-full bg-[#E8D9C5]/30 border-none rounded-xl p-5 focus:ring-2 focus:ring-brand-orange-500 outline-none transition-all"
                                 />
                             </div>
                             <div className="space-y-4">
                                 <label className="text-sm font-bold block">Your email</label>
                                 <input
+                                    name="email"
                                     type="email"
+                                    required
                                     className="w-full bg-[#E8D9C5]/30 border-none rounded-xl p-5 focus:ring-2 focus:ring-brand-orange-500 outline-none transition-all"
                                 />
                             </div>
                             <div className="space-y-4">
                                 <label className="text-sm font-bold block">Subject</label>
                                 <input
+                                    name="subject"
                                     type="text"
+                                    required
                                     className="w-full bg-[#E8D9C5]/30 border-none rounded-xl p-5 focus:ring-2 focus:ring-brand-orange-500 outline-none transition-all"
                                 />
                             </div>
                             <div className="space-y-4">
                                 <label className="text-sm font-bold block">Your message (optional)</label>
                                 <textarea
+                                    name="message"
                                     rows={6}
                                     className="w-full bg-[#E8D9C5]/30 border-none rounded-xl p-5 focus:ring-2 focus:ring-brand-orange-500 outline-none transition-all resize-none"
                                 ></textarea>
                             </div>
                             <button
                                 type="submit"
-                                className="bg-brand-orange-500 text-white font-bold py-4 px-12 rounded-xl hover:bg-brand-orange-600 transition-all transform hover:scale-105"
+                                disabled={isSubmitting}
+                                className="bg-brand-orange-500 text-white font-bold py-4 px-12 rounded-xl hover:bg-brand-orange-600 transition-all transform hover:scale-105 disabled:opacity-50 disabled:scale-100"
                             >
-                                Submit
+                                {isSubmitting ? 'Sending...' : 'Submit'}
                             </button>
+
+                            {status === 'success' && (
+                                <p className="text-green-600 font-bold">Message sent successfully! We will get back to you soon.</p>
+                            )}
+                            {status === 'error' && (
+                                <p className="text-red-600 font-bold">Something went wrong. Please try again or email us directly.</p>
+                            )}
                         </form>
                     </div>
 
                     {/* Email and Sidebar Info */}
-                    <div className="lg:pt-24 contact-fade-up">
+                    <div className="lg:pt-24 contact-fade-up opacity-0 translate-y-8">
                         <div className="mb-16">
                             <span className="text-xs font-mono uppercase tracking-[0.4em] text-neutral-500 mb-6 block">
                                 Get in Touch

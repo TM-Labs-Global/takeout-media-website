@@ -4,6 +4,7 @@ import Navbar from "@/shared/components/layout/Navbar";
 import SocialSidebar from "@/shared/components/layout/SocialSidebar";
 import FloatingSearch from "@/shared/components/layout/FloatingSearch";
 import Footer from "@/shared/components/layout/Footer";
+import ScrollObserver from "@/shared/components/layout/ScrollObserver";
 import ClientOnly from "@/shared/components/layout/ClientOnly";
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className="antialiased bg-brand-black-950 text-white min-h-screen flex flex-col"
       >
+        <ScrollObserver />
         <Navbar />
         <SocialSidebar />
         <FloatingSearch />

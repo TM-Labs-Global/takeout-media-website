@@ -14,8 +14,8 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="w-full py-12 bg-white text-brand-black-950 border-t border-neutral-100">
-            <div className="container mx-auto px-6 max-w-7xl">
+        <footer className="relative z-10 w-full py-12 bg-white text-brand-black-950 border-t border-neutral-100">
+            <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
 
                     {/* Social Links */}
@@ -35,7 +35,7 @@ export default function Footer() {
 
                     {/* Copyright */}
                     <div className="text-sm font-medium text-neutral-500">
-                        © {currentYear} Takeout Media A <a href="https://technologymedia.global/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-orange-500 transition-colors underline underline-offset-4">TM Global</a> Company. All rights reserved.
+                        © {currentYear} Takeout Media A <a href="https://technologymedia.global/" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-brand-orange-500 transition-colors underline underline-offset-4">TM Global</a> Company. All rights reserved.
                     </div>
 
                 </div>

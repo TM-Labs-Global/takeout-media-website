@@ -50,9 +50,6 @@ export default function Clients() {
             // Logos animation
             const logos = gridRef.current?.querySelectorAll(".client-logo");
             if (logos && logos.length > 0) {
-                // Set initial state to avoid flash of un-animated content
-                gsap.set(logos, { opacity: 0, y: 40, scale: 0.9 });
-
                 gsap.to(logos, {
                     y: 0,
                     opacity: 1,
@@ -69,17 +66,11 @@ export default function Clients() {
                         // More permissive start for mobile
                         start: "top 90%",
                         toggleActions: "play none none none",
-                        onEnter: () => ScrollTrigger.refresh(),
                     },
                 });
             }
 
-            // Force a refresh after component mounts and initial images likely load
-            const timer = setTimeout(() => {
-                ScrollTrigger.refresh();
-            }, 1000);
-
-            return () => clearTimeout(timer);
+            return () => {};
         },
         { scope: sectionRef }
     );
@@ -110,7 +101,7 @@ export default function Clients() {
                     {CLIENT_LOGOS.map((logo, index) => (
                         <div
                             key={index}
-                            className="client-logo group relative flex items-center justify-center p-4 md:p-8 bg-white/60 hover:bg-white rounded-2xl md:rounded-3xl border border-white/80 hover:border-brand-orange-300/50 shadow-sm hover:shadow-xl hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-500 ease-out cursor-default overflow-hidden aspect-square"
+                            className="client-logo group relative flex items-center justify-center p-4 md:p-8 bg-white/60 hover:bg-white rounded-2xl md:rounded-3xl border border-white/80 hover:border-brand-orange-300/50 shadow-sm hover:shadow-xl hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-500 ease-out cursor-default overflow-hidden aspect-square opacity-0 translate-y-8 scale-90"
                         >
                             {/* Card Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-orange-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

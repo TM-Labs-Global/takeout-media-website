@@ -47,6 +47,13 @@ export default function Navbar() {
                 end: "max",
                 onUpdate: (self) => {
                     if (isMobileMenuOpen) return;
+
+                    // Always show navbar when near the top of the page
+                    if (self.scroll() < 80) {
+                        showAnim.play();
+                        return;
+                    }
+
                     if (self.direction === -1) {
                         showAnim.play();
                     } else {
