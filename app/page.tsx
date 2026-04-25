@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/shared/components/home/Hero";
 import Services from "@/shared/components/home/Services";
 import Showcase from "@/shared/components/home/Showcase";
