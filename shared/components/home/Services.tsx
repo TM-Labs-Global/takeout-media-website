@@ -45,7 +45,7 @@ export default function Services() {
                     trigger: containerRef.current,
                     start: "top 80%",
                     end: "bottom center",
-                    toggleActions: "play none none reverse",
+                    toggleActions: "play none none none",
                 },
             });
 

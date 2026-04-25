@@ -30,7 +30,8 @@ const OFFICE_LOCATIONS = [
 
 export default function ContactContent() {
     const sectionRef = useRef<HTMLElement>(null);
-    const [formStatus, setFormStatus] = useState<'idle' | 'success'>('idle');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     useGSAP(
         () => {
@@ -48,6 +49,39 @@ export default function ContactContent() {
         },
         { scope: sectionRef }
     );
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus('idle');
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <section ref={sectionRef} className="w-full bg-[#111013] text-white">
@@ -109,10 +143,11 @@ export default function ContactContent() {
 
                     {/* Right Side: Form */}
                     <div className="lg:col-span-8 fade-up">
-                        <form className="space-y-10" onSubmit={(e) => { e.preventDefault(); setFormStatus('success'); }}>
+                        <form className="space-y-10" onSubmit={handleSubmit}>
                             <div className="space-y-4">
                                 <label className="text-xs font-medium text-white/60 block px-1">Your name</label>
                                 <input
+                                    name="name"
                                     type="text"
                                     required
                                     className="w-full bg-white/5 border-none rounded-md p-6 focus:ring-1 focus:ring-white/20 outline-none transition-all placeholder:text-white/10"
@@ -121,6 +156,7 @@ export default function ContactContent() {
                             <div className="space-y-4">
                                 <label className="text-xs font-medium text-white/60 block px-1">Your email</label>
                                 <input
+                                    name="email"
                                     type="email"
                                     required
                                     className="w-full bg-white/5 border-none rounded-md p-6 focus:ring-1 focus:ring-white/20 outline-none transition-all placeholder:text-white/10"
@@ -129,13 +165,16 @@ export default function ContactContent() {
                             <div className="space-y-4">
                                 <label className="text-xs font-medium text-white/60 block px-1">Subject</label>
                                 <input
+                                    name="subject"
                                     type="text"
+                                    required
                                     className="w-full bg-white/5 border-none rounded-md p-6 focus:ring-1 focus:ring-white/20 outline-none transition-all placeholder:text-white/10"
                                 />
                             </div>
                             <div className="space-y-4">
                                 <label className="text-xs font-medium text-white/60 block px-1">Your message (optional)</label>
                                 <textarea
+                                    name="message"
                                     rows={8}
                                     className="w-full bg-white/5 border-none rounded-md p-6 focus:ring-1 focus:ring-white/20 outline-none transition-all resize-none placeholder:text-white/10"
                                 ></textarea>
@@ -144,14 +183,20 @@ export default function ContactContent() {
                             <div className="flex items-center gap-8">
                                 <button
                                     type="submit"
-                                    className="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-12 rounded-lg transition-all transform active:scale-95"
+                                    disabled={isSubmitting}
+                                    className="bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-12 rounded-lg transition-all transform active:scale-95 disabled:opacity-50"
                                 >
-                                    {formStatus === 'success' ? 'Message Sent' : 'Submit'}
+                                    {isSubmitting ? 'Sending...' : 'Submit'}
                                 </button>
 
-                                {formStatus === 'success' && (
+                                {status === 'success' && (
                                     <p className="text-brand-orange-500 font-mono text-xs uppercase tracking-widest animate-pulse">
                                         Thank you! We'll reply soon.
+                                    </p>
+                                )}
+                                {status === 'error' && (
+                                    <p className="text-red-400 font-mono text-xs uppercase tracking-widest">
+                                        Something went wrong. Please try again.
                                     </p>
                                 )}
                             </div>

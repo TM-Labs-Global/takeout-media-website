@@ -1,15 +1,21 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const columnsRef = useRef<(HTMLDivElement | null)[]>([]);
     const pathname = usePathname();
 
-    useEffect(() => {
+    useGSAP(() => {
         // 1. Ensure the overlay is visible before starting
         if (containerRef.current) {
             containerRef.current.style.display = "flex";
@@ -27,6 +33,9 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
                 if (containerRef.current) {
                     containerRef.current.style.display = "none";
                 }
+                // CRITICAL: Refresh ScrollTrigger after transition completes
+                // This ensures all triggers on the NEW page are correctly positioned
+                ScrollTrigger.refresh();
             },
         });
 
@@ -37,18 +46,14 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
             ease: "power4.inOut", // The smooth, premium curve
             delay: 0.1,          // A tiny pause after the new page "loads"
         });
-
-        return () => {
-            tl.kill();
-        };
-    }, [pathname]);
+    }, { dependencies: [pathname], scope: containerRef });
 
     return (
         <>
             {/* FULL SCREEN OVERLAY CONTAINER */}
             <div
                 ref={containerRef}
-                className="fixed inset-0 z-[9999] pointer-events-none flex"
+                className="fixed inset-0 z-[9999] pointer-events-none hidden"
             >
                 {/* 5 COLUMNS - exactly 20% width each */}
                 {[...Array(5)].map((_, index) => (

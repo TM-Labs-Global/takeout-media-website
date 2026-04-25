@@ -31,18 +31,15 @@ export default function Subsidiaries() {
 
     useGSAP(
         () => {
+            // No need for gsap.set here as we use CSS initial states
+
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top 85%",
-                    toggleActions: "play none none reverse",
-                    onEnter: () => ScrollTrigger.refresh(),
+                    toggleActions: "play none none none",
                 },
             });
-
-            // Set initial states to prevent flash
-            gsap.set(textRef.current, { x: -50, opacity: 0 });
-            gsap.set(".subsidiary-logo", { y: 30, opacity: 0 });
 
             tl.to(textRef.current, {
                 x: 0,
@@ -58,12 +55,7 @@ export default function Subsidiaries() {
                     ease: "power2.out",
                 }, "-=0.6");
 
-            // Force a refresh after component mounts
-            const timer = setTimeout(() => {
-                ScrollTrigger.refresh();
-            }, 1000);
-
-            return () => clearTimeout(timer);
+            return () => {};
         },
         { scope: sectionRef }
     );
@@ -77,7 +69,7 @@ export default function Subsidiaries() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                     {/* Left side: Text */}
-                    <div ref={textRef} className="max-w-xl">
+                    <div ref={textRef} className="max-w-xl opacity-0 -translate-x-12">
                         <span className="text-xs font-mono uppercase tracking-[0.3em] text-neutral-500 mb-6 block">
                             Our Subsidiaries
                         </span>
@@ -91,7 +83,7 @@ export default function Subsidiaries() {
                         {SUBSIDIARIES.map((item, index) => (
                             <div
                                 key={index}
-                                className="subsidiary-logo relative w-full aspect-[3/2]"
+                                className="subsidiary-logo relative w-full aspect-[3/2] opacity-0 translate-y-8"
                             >
                                 <Image
                                     src={item.logo}
